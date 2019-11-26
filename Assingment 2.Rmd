@@ -1,0 +1,24 @@
+---
+title: "Untitled"
+author: "KX"
+date: "26 November 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(leaflet)
+
+  rand_lng = function(n = 10) rnorm(n, 103.829422, .1)
+  rand_lat = function(n = 10) rnorm(n, 1.236402, .1)
+
+m = leaflet() %>% addTiles() %>% addCircles(rand_lng(50), rand_lat(50), radius = runif(50, 10, 200))
+
+
+ 
+m
+```
